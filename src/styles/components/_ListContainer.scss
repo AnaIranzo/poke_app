@@ -1,0 +1,6 @@
+@import '../utils/mixins.scss';
+
+.list-container{
+    
+    @include column-center;
+}

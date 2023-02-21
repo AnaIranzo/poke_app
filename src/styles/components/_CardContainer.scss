@@ -1,0 +1,6 @@
+@import '../utils/mixins.scss';
+
+.card-container{
+    
+    @include column-center;
+}

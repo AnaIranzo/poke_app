@@ -1,0 +1,6 @@
+@import '../utils/mixins.scss';
+
+.form-container{
+    
+    @include column-center;
+}
