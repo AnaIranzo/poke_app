@@ -6,12 +6,12 @@ import { BrowserRouter } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
-     <BrowserRouter>
+    <BrowserRouter>
       
       <Header />
       <Main/>
-     
-      </BrowserRouter>
+
+    </BrowserRouter>
       
       <Footer />
     </div>
