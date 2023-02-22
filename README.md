@@ -29,6 +29,10 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `Search`
+![img]('./public/assets/pokemon-1529246_1280.jpg') 
+In this app you can search your favorites pokemon using functional React.
+
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**

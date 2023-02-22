@@ -13,25 +13,28 @@ const Main = () => {
 
   useEffect(()=> {
     async function getData(){
-      try {
-        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${data}`);
-        const json = response.data
+      if (data !== '') {
+        try {
         
-        //console.log(json);
-        //setPokemonData(json)
-
-        if (json.name) {
-          setPokemonData(pokemon => pokemon.concat(json))
+          const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${data}`);
+          const json = response.data
+          
+          //console.log(json);
+          //setPokemonData(json)
+  
+          if (json.name) {
+            setPokemonData(pokemon => pokemon.concat(json));
+          }
+          
+        } catch (error) {
+  
+          setPokemonData({})
         }
-        
-      } catch (error) {
-
-        setPokemonData({})
       }
+      
     }
     getData()
   },[data]);
-  console.log('**',pokemonData);
 
   const handleForm = (e) =>{
     e.preventDefault();
@@ -44,7 +47,7 @@ const Main = () => {
       <Routes>
     
         <Route path="/form" element={<><Form onSubmit={handleForm}/><Card data={pokemonData}/><ListaPokemon data={pokemonData} key={uuidv4()}/></>}/>
-        {/* <Route path="/card" element={<ListaPokemon data={pokemonData}/>}/>  */}
+        {/* <Route path="/list" element={<ListaPokemon data={pokemonData}/>}/>  */}
       
       </Routes>
 
