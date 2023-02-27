@@ -39,7 +39,7 @@ const Main = () => {
       
     }
     getData()
-  },[data]);
+  },[data,setPokemonData]);
 
   const handleForm = (e) =>{
     e.preventDefault();
