@@ -1,18 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import {Routes,Route} from 'react-router-dom';
 import axios from 'axios';
-import { v4 as uuidv4 } from 'uuid';
+
 import Search from './Search/Search'
-import Card from './ListaPokemon/Card/Card'
+
 import ListaPokemon from './ListaPokemon/ListaPokemon';
 import NotFound from './NotFound/NotFound';
 import Details from './Details/Details';
 import Form from './Form/Form';
+import { listContext } from '../../context/listContext';
 
 const Main = () => {
 
   const [data, setData] = useState('');
-  const [pokemonData, setPokemonData] = useState([]);
+  //const [pokemonData, setPokemonData] = useState([]);
+  const {pokemonData, setPokemonData} = useContext(listContext);
 
   useEffect(()=> {
     async function getData(){
@@ -49,10 +51,10 @@ const Main = () => {
   return <main>
       <Routes>
     
-        <Route path="/" element={<ListaPokemon data={pokemonData} key={uuidv4()}/>}/>
+        <Route path="/" element={<ListaPokemon />}/>
         <Route path="/new" element={<Form/>}/>
         <Route path="/pokemon/:id" element={<Details/>} />
-        <Route path="/search" element={<><Search onSubmit={handleForm}/><Card data={pokemonData}/></>}/>
+        <Route path="/search" element={<Search onSubmit={handleForm}/>}/>
         <Route path="/*" element={<NotFound/>}/>
       
       </Routes>
