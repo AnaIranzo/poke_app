@@ -1,16 +1,17 @@
-import React from "react";
+import React, {   useContext } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import {listContext} from '../../../context/listContext';
+import Listcard from '../ListaPokemon/ListCard/ListCard';
 
-const ListaPokemon = (props) => {
+const ListaPokemon = () => {
 
-  //console.log(props.data);
+  const {pokemonData} = useContext(listContext);
+  console.log(pokemonData);
+
   return <div className="list-container">
     <h2>Pokemon buscados</h2>
-    {props.data.map(pokemon => <>
-    <img src={pokemon.sprites.front_default} alt=""  />
-    <p>{pokemon.name}</p>
-    <p>Nº {pokemon.id}</p>
-    
-    </>)}
+    {pokemonData.map(pokemon => <Listcard data={pokemon} key={uuidv4()}/>)}
+
   </div>;
 };
 

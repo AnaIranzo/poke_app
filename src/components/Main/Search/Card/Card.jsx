@@ -7,7 +7,6 @@ const Card = (props) => {
   
   
   return <div className="card-container">
-    <h2>Resultado</h2>
     {props.data[0] ? <><img src={props.data[index].sprites.front_default} alt=""  />
     <p>{props.data[index].name}</p>
     <p>Nº {props.data[index].id}</p></> :''} 
