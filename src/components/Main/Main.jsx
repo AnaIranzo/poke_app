@@ -14,7 +14,7 @@ const Main = () => {
 
   const [data, setData] = useState('');
   //const [pokemonData, setPokemonData] = useState([]);
-  const {pokemonData, setPokemonData} = useContext(listContext);
+  const {setPokemonData} = useContext(listContext);
 
   useEffect(()=> {
     async function getData(){
