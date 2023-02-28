@@ -8,7 +8,7 @@ const Search = (props) => {
 
 
   const {pokemonData} = useContext(listContext);
-
+  
   return <div className="form-container">
     <h2>Busca un pokemon</h2>
     <form onSubmit={props.onSubmit}>

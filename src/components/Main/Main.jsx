@@ -14,18 +14,23 @@ const Main = () => {
 
   const [data, setData] = useState('');
   //const [pokemonData, setPokemonData] = useState([]);
-  const {setPokemonData} = useContext(listContext);
+  const {pokemonData, setPokemonData} = useContext(listContext);
 
   useEffect(()=> {
-    async function getData(){
-      if (data !== '') {
+    const  getData = async () =>{
+
+      const pokeRepeat = pokemonData.map(pokemon => pokemon.name.includes(data));
+
+      if (data !== '' && !pokeRepeat.includes(true)) {
+
+        
         try {
         
           const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${data}`);
           const json = response.data
           
-          //console.log(json);
-          //setPokemonData(json)
+          console.log(json);
+          
   
           if (json.name) {
             setPokemonData(pokemon => pokemon.concat(json));
@@ -38,8 +43,10 @@ const Main = () => {
       }
       
     }
-    getData()
-  },[data,setPokemonData]);
+    getData();
+    // eslint-disable-next-line
+  },[data]);
+
 
   const handleForm = (e) =>{
     e.preventDefault();
