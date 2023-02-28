@@ -1,7 +1,7 @@
 import React, {   useContext } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import {listContext} from '../../../context/listContext';
-import Listcard from '../ListaPokemon/ListCard/ListCard';
+import {listContext} from '../../../../context/listContext';
+import Listcard from './ListCard/ListCard';
 
 const ListaPokemon = () => {
 

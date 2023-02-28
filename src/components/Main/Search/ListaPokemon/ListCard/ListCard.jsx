@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 
 const Listcard = (props) => {
+  
   let typeOne
   let typeTwo
   if (props.data.types) {
