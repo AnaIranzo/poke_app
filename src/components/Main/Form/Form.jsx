@@ -22,6 +22,7 @@ const Form = () => {
       typeOne,
       typeTwo
     }
+    console.log(newPokemons);
     if(typeOne!==typeTwo){
       setNewPokemon(pokemon => pokemon.concat(newPokemons));
       alert('Pokemon added successfully');
@@ -34,8 +35,8 @@ const Form = () => {
 
 
 
-  return <>
-  <h2>Create Pokemons</h2>
+  return <section className='form'>
+  <h2>Create your own Pokémon</h2>
 
     <form onSubmit={handleSubmit(onSubmit)} className='form-container'>
       <input type="number" placeholder='Id'{...register("id",{ required: true, message: "error message"})} />
@@ -86,7 +87,7 @@ const Form = () => {
 
 
 
-</>;
+</section>;
 };
 
 export default Form;

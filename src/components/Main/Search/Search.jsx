@@ -42,7 +42,7 @@ const Search = (props) => {
   },[props.data]);
   
   return <div className="search-container">
-    <h2>Busca un pokemon</h2>
+    <h2>Catch wild Pokémon</h2>
   
       <input type="text" name="pokemon" onChange={props.onSubmit}/>
       
