@@ -29,7 +29,7 @@ const Main = () => {
     
         <Route path="/" element={<Home />}/>
         <Route path="/new" element={<Form/>}/>
-        <Route path="/pokemon/:id" element={<Details/>} />
+        <Route path="/pokemon/:id/:name/:typeOne/:typeTwo/:image"  element={<Details/>} />
         <Route path="/search" element={<Search data={data} onSubmit={debouncedChangeHandler}/>}/>
         <Route path="/*" element={<NotFound/>}/>
       

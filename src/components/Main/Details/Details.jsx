@@ -1,60 +1,29 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
 
 const Details = () => {
   console.log(useParams());
-  const {id} = useParams();
-  const [pokemonDetail, setPokemonDetail] = useState('');
+  const {id, name, typeOne, typeTwo, image} = useParams();
 
+//image = decodeURIComponent(encodedURL.uriFull)
+console.log(image);
 
-  useEffect(()=> {
-    async function getData(){
-      if (id !== '') {
-        try {
-        
-          const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
-          const json = response.data
-          
-          console.log(json);
-          //setPokemonData(json)
-  
-          if (json.name) {
-            setPokemonDetail(json);
-          }
-          
-        } catch (error) {
-  
-          setPokemonDetail({})
-        }
-      }
-      
-    }
-    getData()
-  },[id]);
-
-  let typeOne
-  let typeTwo
-
-  if (pokemonDetail) {
-    let types = pokemonDetail.types.length
-  console.log(types);
-
-  if (types === 1) {
-    typeOne = pokemonDetail.types[0].type.name
-    
-  }else{
-    typeOne = pokemonDetail.types[0].type.name
-    typeTwo = pokemonDetail.types[1].type.name
-  } 
+  const detailedPokemon ={
+    id,
+    name,
+    typeOne,
+    typeTwo,
+    image
   }
-  
+
+
+//console.log(decodeURIComponent(encodedURL.uriFull))
 
   return <div>
-    {pokemonDetail ? <><img src={pokemonDetail.sprites.front_default} alt=""  />
-    <p>{pokemonDetail.name}</p>
-    <p>Nº {id}</p>
-    {pokemonDetail.types.length !== 1 ? <p>Types: {typeOne}, {typeTwo}</p> : <p>Type: {typeOne} </p> }
+    {detailedPokemon ? <><img src={image} alt=""  />
+    <p>{detailedPokemon.name}</p>
+    <p>Nº {detailedPokemon.id}</p>
+    {detailedPokemon.typeTwo !== '' ? <p>Types: {typeOne}, {typeTwo}</p> : <p>Type: {typeOne} </p> }
     </> :''} 
 
   </div>;
