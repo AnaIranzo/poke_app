@@ -1,6 +1,22 @@
+# PokeApp
+
+You can search and create your favourites Pokémon.
+Build using functional react.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+### `npm install`
+
+## Routing:
+/
+
+/new 
+
+/pokemon/:id 
+
+/search 
 
 ## Available Scripts
 
@@ -28,10 +44,6 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `Search`
-![img]('./public/assets/pokemon-1529246_1280.jpg') 
-In this app you can search your favorites pokemon using functional React.
 
 ### `npm run eject`
 
