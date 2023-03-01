@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import {Routes,Route} from 'react-router-dom';
+import debounce from 'lodash.debounce';
 
 import Search from './Search/Search'
-
 import Home from './Home/Home';
 import NotFound from './NotFound/NotFound';
 import Details from './Details/Details';
@@ -14,11 +14,15 @@ const Main = () => {
 
 
   const handleForm = (e) =>{
-    e.preventDefault();
-    //console.log(e.target.pokemon.value);
-    setData(e.target.pokemon.value);
-    e.target.pokemon.value = '';
+    console.log(e.target.value);
+    setData(e.target.value);
+    e.target.value = ''; 
   }
+
+// eslint-disable-next-line
+  const debouncedChangeHandler = useCallback(
+    debounce(handleForm, 1500)
+  , []);
 
   return <main>
       <Routes>
@@ -26,7 +30,7 @@ const Main = () => {
         <Route path="/" element={<Home />}/>
         <Route path="/new" element={<Form/>}/>
         <Route path="/pokemon/:id" element={<Details/>} />
-        <Route path="/search" element={<Search data={data} onSubmit={handleForm}/>}/>
+        <Route path="/search" element={<Search data={data} onSubmit={debouncedChangeHandler}/>}/>
         <Route path="/*" element={<NotFound/>}/>
       
       </Routes>

@@ -47,10 +47,10 @@ const Search = (props) => {
   
   return <div className="form-container">
     <h2>Busca un pokemon</h2>
-    <form onSubmit={props.onSubmit}>
-      <input type="text" name="pokemon"/>
-      <input type="submit" value="Buscar" />
-    </form>
+  
+      <input type="text" name="pokemon" onChange={props.onSubmit}/>
+      
+  
     <ListaPokemon data={pokemonData} key={uuidv4()}/>
   </div>;
 };
