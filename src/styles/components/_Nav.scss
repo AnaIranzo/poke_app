@@ -1,0 +1,11 @@
+
+@import '../utils/variables.scss';
+
+.navbar {
+    & a {
+    text-decoration: none;
+    padding: 20px;
+    color: $blue;
+    font-size: 20px;
+    }
+}
