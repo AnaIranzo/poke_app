@@ -47,7 +47,7 @@ const Search = (props) => {
       <input type="text" name="pokemon" onChange={props.onSubmit}/>
       
   
-    <ListaPokemon data={pokemonData} key={uuidv4()}/>
+    <ListaPokemon data={pokemonData} key={uuidv4()} />
   </div>;
 };
 
