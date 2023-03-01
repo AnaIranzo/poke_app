@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
-import { listContext } from '../../../context/listContext';
+import { newContext } from '../../../context/newContext';
 
 
 
 const Form = () => {
-  const { setPokemonData} = useContext(listContext);
+  const { newPokemon, setNewPokemon} = useContext(newContext);
   const { register, handleSubmit } = useForm();
+
   const onSubmit = data => {
     const id = data.id
     const name= data.name
@@ -14,16 +15,18 @@ const Form = () => {
     const typeOne = data.typeOne
     const typeTwo = data.typeTwo
 
-    const newPokemon = {
+    const newPokemons = {
       id,
       name,
       sprites: {front_default}, 
       typeOne,
       typeTwo
     }
-    setPokemonData(pokemon => pokemon.concat(newPokemon));
+
+    setNewPokemon(pokemon => pokemon.concat(newPokemons));
   }
 
+  console.log(newPokemon);
 /* const handleForm = (e) => {
   e.preventDefault();
 
@@ -55,7 +58,7 @@ const Form = () => {
   <h2>Create Pokemons</h2>
 
     <form onSubmit={handleSubmit(onSubmit)} className='container-form'>
-      <input type="number" placeholder='Id'{...register("id",{ required: true, min:2000})} />
+      <input type="number" placeholder='Id'{...register("id",{ required: true})} />
       <input placeholder='Name' {...register("name",{ required: true , minLength: 3})} />
       <input placeholder='Image' {...register("image",{ required: true})} />
       <select {...register("typeOne")}>

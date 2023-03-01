@@ -8,9 +8,6 @@ const Details = () => {
   const [pokemonDetail, setPokemonDetail] = useState('');
 
 
-  
-
-
   useEffect(()=> {
     async function getData(){
       if (id !== '') {
@@ -42,7 +39,7 @@ const Details = () => {
   if (pokemonDetail) {
     let types = pokemonDetail.types.length
   console.log(types);
- 
+
   if (types === 1) {
     typeOne = pokemonDetail.types[0].type.name
     
