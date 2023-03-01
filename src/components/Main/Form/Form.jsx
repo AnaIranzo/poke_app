@@ -22,8 +22,14 @@ const Form = () => {
       typeOne,
       typeTwo
     }
-
-    setNewPokemon(pokemon => pokemon.concat(newPokemons));
+    if(typeOne!==typeTwo){
+      setNewPokemon(pokemon => pokemon.concat(newPokemons));
+    
+    }else{
+      alert('Pokemon cannot have the same type twice');
+    }
+    
+    
   }
 
   console.log(newPokemon);
@@ -49,19 +55,16 @@ const Form = () => {
       }
     }
 
-  
-
- 
-
 } */
+
   return <>
   <h2>Create Pokemons</h2>
 
     <form onSubmit={handleSubmit(onSubmit)} className='container-form'>
-      <input type="number" placeholder='Id'{...register("id",{ required: true})} />
-      <input placeholder='Name' {...register("name",{ required: true , minLength: 3})} />
-      <input placeholder='Image' {...register("image",{ required: true})} />
-      <select {...register("typeOne")}>
+      <input type="number" placeholder='Id'{...register("id",{ required: true, message: "error message"})} />
+      <input placeholder='Name' {...register("name",{ required: true , minLength: 3,  message: "error message"})} />
+      <input placeholder='Image' {...register("image",{ required: true , message: "error message"})} />
+      <select {...register("typeOne",{ required: true , message: "error message"})}>
           <option value="bug">Bug</option>
           <option value="dark">Dark</option>
           <option value="dragon">Dragon</option>

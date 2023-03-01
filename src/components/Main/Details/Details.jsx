@@ -54,7 +54,7 @@ const Details = () => {
     {pokemonDetail ? <><img src={pokemonDetail.sprites.front_default} alt=""  />
     <p>{pokemonDetail.name}</p>
     <p>Nº {id}</p>
-    <p>Types: {typeOne} {typeTwo}</p> 
+    {pokemonDetail.types.length !== 1 ? <p>Types: {typeOne}, {typeTwo}</p> : <p>Type: {typeOne} </p> }
     </> :''} 
 
   </div>;
