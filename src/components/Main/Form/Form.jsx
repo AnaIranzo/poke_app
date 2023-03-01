@@ -37,7 +37,7 @@ const Form = () => {
   return <>
   <h2>Create Pokemons</h2>
 
-    <form onSubmit={handleSubmit(onSubmit)} className='container-form'>
+    <form onSubmit={handleSubmit(onSubmit)} className='form-container'>
       <input type="number" placeholder='Id'{...register("id",{ required: true, message: "error message"})} />
       <input placeholder='Name' {...register("name",{ required: true , minLength: 3,  message: "error message"})} />
       <input placeholder='Image' {...register("image",{ required: true , message: "error message"})} />

@@ -1,0 +1,19 @@
+@import '../utils/mixins.scss';
+
+.card-container{
+    background-image: url('../../assets/pokemon-g544cbfc79_640.png');
+    background-size: cover;
+    width: 250px;
+    
+    
+    font-weight: bold;
+    @include column-center;
+    & img {
+        width: 200px;
+    }
+    & a{
+        text-decoration: none;
+        font-size: larger;
+        color: black;
+    }
+}

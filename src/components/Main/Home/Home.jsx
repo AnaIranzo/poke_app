@@ -34,10 +34,10 @@ const Home = () => {
   },[]);
 
 
-  console.log(pokemons);
 
 
-  return <div>
+
+  return <div className='home-container'>
 
 {newPokemon.map(pokemon => <Card newData={pokemon} key={uuidv4()}/>)}
 {pokemons.map(pokemon => <Card data={pokemon} key={uuidv4()}/>)}

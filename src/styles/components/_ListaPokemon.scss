@@ -1,6 +1,9 @@
 @import '../utils/mixins.scss';
 
-.card-container{
-    
+.list-container{
     @include column-center;
+    margin: 30px;
+    gap: 20px;
+    
 }
+

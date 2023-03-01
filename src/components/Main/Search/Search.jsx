@@ -41,7 +41,7 @@ const Search = (props) => {
     // eslint-disable-next-line
   },[props.data]);
   
-  return <div className="form-container">
+  return <div className="search-container">
     <h2>Busca un pokemon</h2>
   
       <input type="text" name="pokemon" onChange={props.onSubmit}/>

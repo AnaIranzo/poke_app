@@ -1,6 +1,6 @@
 @import '../utils/mixins.scss';
-
-.list-container{
-    
+.home-container{
     @include column-center;
+    gap: 20px;
+    margin: 30px;
 }

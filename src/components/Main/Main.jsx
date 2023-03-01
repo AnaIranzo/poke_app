@@ -7,7 +7,6 @@ import Home from './Home/Home';
 import NotFound from './NotFound/NotFound';
 import Details from './Details/Details';
 import Form from './Form/Form';
-
 const Main = () => {
 
   const [data, setData] = useState('');
@@ -25,8 +24,8 @@ const Main = () => {
   , []);
 
   return <main>
+
       <Routes>
-    
         <Route path="/" element={<Home />}/>
         <Route path="/new" element={<Form/>}/>
         <Route path="/pokemon/:id/:name/:typeOne/:typeTwo/:image"  element={<Details/>} />

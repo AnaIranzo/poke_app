@@ -1,0 +1,12 @@
+@import '../utils/mixins.scss';
+
+.form-container{
+    @include column-center;
+    background-image: url('../../assets/NicePng_pokedex-png_2285786.png');
+    height: 600px;
+    gap: 10px;
+    & input{
+        opacity: 90%;
+        border-radius: 10px;
+    }
+}
