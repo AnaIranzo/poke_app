@@ -10,7 +10,7 @@ const ListaPokemon = () => {
 
   return <div className="list-container">
    
-    {pokemonData !== 0 ? pokemonData.map(pokemon => <Listcard data={pokemon} key={uuidv4()}/>): ''}
+    {pokemonData !== '' ? pokemonData.map(pokemon => <Listcard data={pokemon} key={uuidv4()}/>): ''}
 
   </div>;
 };
