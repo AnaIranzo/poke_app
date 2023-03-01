@@ -18,8 +18,6 @@ const Search = (props) => {
         const pokeRepeat = pokemonData.map(pokemon => pokemon.name.includes(props.data))
 
       if (props.data !== '' && !pokeRepeat.includes(true)) {
-
-        
         try {
         
           const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${props.data}`);
@@ -38,8 +36,6 @@ const Search = (props) => {
         }
       }
       }
-      
-      
     }
     getData();
     // eslint-disable-next-line

@@ -5,7 +5,7 @@ import { newContext } from '../../../context/newContext';
 
 
 const Form = () => {
-  const { newPokemon, setNewPokemon} = useContext(newContext);
+  const { setNewPokemon} = useContext(newContext);
   const { register, handleSubmit } = useForm();
 
   const onSubmit = data => {
@@ -24,38 +24,15 @@ const Form = () => {
     }
     if(typeOne!==typeTwo){
       setNewPokemon(pokemon => pokemon.concat(newPokemons));
+      alert('Pokemon added successfully');
     
     }else{
       alert('Pokemon cannot have the same type twice');
     }
     
-    
   }
 
-  console.log(newPokemon);
-/* const handleForm = (e) => {
-  e.preventDefault();
 
-    const id =e.target.id.value
-    const name= e.target.name.value
-    const front_default = e.target.image.value
-
-    let typeOne
-    for (let i = 0; i < 17; i++) {
-      if (e.target.typeOne[i].selected === true) {
-        typeOne = e.target.typeOne[i].value
-        break
-      }
-    }
-    let typeTwo
-    for (let i = 0; i < 17; i++) {
-      if (e.target.typeTwo[i].selected === true) {
-        typeTwo = e.target.typeTwo[i].value
-        break
-      }
-    }
-
-} */
 
   return <>
   <h2>Create Pokemons</h2>
