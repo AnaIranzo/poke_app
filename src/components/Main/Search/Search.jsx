@@ -35,9 +35,8 @@ const Search = (props) => {
           setPokemonData({})
         }
       }
-      }else{
-        setPokemonData({})
       }
+      
     }
     getData();
     // eslint-disable-next-line
