@@ -38,7 +38,7 @@ const Home = () => {
 
 
   return <div className='home-container'>
-
+<h1>PokéApp</h1>
 {newPokemon.map(pokemon => <Card newData={pokemon} key={uuidv4()}/>)}
 {pokemons.map(pokemon => <Card data={pokemon} key={uuidv4()}/>)}
   </div>;
