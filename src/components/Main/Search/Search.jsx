@@ -14,7 +14,7 @@ const Search = (props) => {
   useEffect(()=> {
     const  getData = async () =>{
 
-      if (props.data) {
+      if (props.data !== '') {
         const pokeRepeat = pokemonData.map(pokemon => pokemon.name.includes(props.data))
 
       if (props.data !== '' && !pokeRepeat.includes(true)) {
@@ -31,8 +31,6 @@ const Search = (props) => {
           }
           
         } catch (error) {
-  
-          setPokemonData({})
         }
       }
       }
