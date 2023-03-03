@@ -15,12 +15,12 @@ const Search = (props) => {
     const  getData = async () =>{
 
       if (props.data !== '') {
-        const pokeRepeat = pokemonData.map(pokemon => pokemon.name.includes(props.data))
+        const pokeRepeat = pokemonData.map(pokemon => pokemon.name.includes(props.data.toLowerCase()))
 
       if (props.data !== '' && !pokeRepeat.includes(true)) {
         try {
         
-          const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${props.data}`);
+          const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${props.data.toLowerCase()}`);
           const json = response.data
           
           console.log(json);
