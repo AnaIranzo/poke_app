@@ -2,6 +2,8 @@
 
 Search your favourite Pokemon!! 
 
+<img src="./public/assets/5IPv.gif" alt="pikachu" />
+
 ## Technologies
 
 - JavaScript
@@ -30,6 +32,8 @@ Search for Pokémon using debounce.
 ### `npm start`
 
 [Take a look!](https://beamish-gumdrop-dbd1ed.netlify.app/)
+
+<img src="./public/assets/5RTG.gif" alt="pikachu" />
 
 
 # Getting Started with Create React App
