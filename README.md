@@ -1,22 +1,42 @@
 # PokeApp
 
-You can search and create your favourites Pokémon.
-Build using functional react.
+Search your favourite Pokemon!! 
+
+## Technologies
+
+- JavaScript
+- Functional React
+- Sass
+- Context
+- Mobile-first
+
+Search for Pokémon using debounce.
+
+
+## Routing:
+/ -> Home
+
+/new -> Create Pokémon
+
+/pokemon/:id -> Pokémon info
+
+/search -> Search Pokémon
+
+## Start
+
+### `npm install`
+
+
+### `npm start`
+
+[Take a look!](https://beamish-gumdrop-dbd1ed.netlify.app/)
+
 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### `npm install`
 
-## Routing:
-/
-
-/new 
-
-/pokemon/:id 
-
-/search 
 
 ## Available Scripts
 
