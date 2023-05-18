@@ -1,6 +1,6 @@
 # PokeApp
 
-Search your favourite Pokemon!! 
+Search your favourite Pokémon!! 
 
 <img src="./public/assets/5IPv.gif" alt="pikachu" />
 
@@ -12,7 +12,7 @@ Search your favourite Pokemon!!
 - Context
 - Mobile-first
 
-Search for Pokémon using debounce.
+Search for Pokémon using debounce method.
 
 
 ## Routing:
